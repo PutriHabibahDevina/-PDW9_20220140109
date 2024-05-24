@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDW9</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tambahkan link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      .checkout-section {
+          margin-top: 70px;
+      }
+  </style>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-light bg-light fixed-top" data-bs-spy="scroll" data-bs-target="#navbarNav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/logo.png" alt="logo" width="20" height="30" class="d-inline-block align-text-top">
+            Shade Green
+          </a>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#Home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#Product">Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html#Flowers">Flowers</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="checkout.html"><i class="fa-solid fa-cart-shopping" style="color: #74C0FC;"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!--Checkout Section-->
+    <section id="Checkout" class="checkout-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card mt-5">
+                <div class="card-body">
+                  <!--Elemen Form digunakan apabila kita ingin membuat sebuah form untuk input-a user.-->
+                  <form id="checkout-form" action="javascript:void(0);" method="post">
+                    <h2 class="text-center mb-4">Checkout Here!</h2>
+                    <label for="sender-name">Nama Pengirim</label>
+                    <input type="text" id="sender-name" name="sender_name" placeholder="Nama Pengirim" class="form-control mb-3" required> <!--Text INput Fields-->
+  
+                    <label for="recipient-name">Nama Penerima</label>
+                    <input type="text" id="recipient-name" name="recipient_name" placeholder="Nama Penerima" class="form-control mb-3" required>
+
+                    <label for="recipient-phone">Nomor Telepon Penerima</label>
+                    <input type="tel" id="recipient-phone" name="recipient_phone" placeholder="Nomor Telepon Penerima" class="form-control mb-3">
+      
+                    <label for="recipient-address">Alamat Pengiriman</label>
+                    <input type="text" id="recipient-address" name="recipient_address" placeholder="Alamat Pengiriman" class="form-control mb-3" required>
+      
+                    <label for="delivery-date">Tanggal Pengiriman</label>
+                    <input type="date" id="delivery-date" name="delivery_date" class="form-control mb-3" required>
+      
+                    <label for="delivery-time">Waktu Pengiriman</label>
+                    <input type="time" id="delivery-time" name="delivery_time" class="form-control mb-3" required>
+                    
+                    <label for="detail-produk">Detail Produk yang Dipesan</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="product_selection[]" id="product-tulip" value="tulip">
+                      <label class="form-check-label" for="product-tulip">
+                        Bunga Tulip Pink
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="product_selection[]" id="product-mawar" value="mawar">
+                      <label class="form-check-label" for="product-mawar">
+                        Buket Mawar Putih
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="product_selection[]" id="product-sweet-pea" value="sweet-pea">
+                      <label class="form-check-label" for="product-sweet-pea">
+                        Bunga Sweet Pea
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="product_selection[]" id="product-hydrangea" value="hydrangea">
+                      <label class="form-check-label" for="product-hydrangea">
+                        Bunga Hydrangea Biru
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="product_selection[]" id="product-gardenia" value="gardenia">
+                      <label class="form-check-label" for="product-gardenia">
+                        Bunga Gardenia Putih
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" name="product_selection[]" id="product-dahlia" value="dahlia">
+                      <label class="form-check-label" for="product-dahlia">
+                        Bunga Dahlia
+                      </label>
+                    </div>                  
+      
+                    <label for="quantity">Jumlah</label>
+                    <input type="number" id="quantity" name="quantity" min="1" class="form-control mb-3" required>
+      
+                    <label for="special-message">Pesan
+                      <label for="bayar">Metode Pembayaran</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="payment-method-transfer" value="transfer" checked>
+                        <label class="form-check-label" for="payment-method-transfer">
+                          Transfer Bank
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="payment-method-credit-card" value="credit-card">
+                        <label class="form-check-label" for="payment-method-credit-card">
+                          Kartu Kredit
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="payment-method-ewallet" value="ewallet">
+                        <label class="form-check-label" for="payment-method-ewallet">
+                          E-Wallet
+                        </label>
+                      </div>
+        
+                      <input type="submit" value="Pesan" class="btn btn-primary mt-2">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!--Footer-->
+      <section id="Contact" class="footer-section">
+          <footer class="bg-dark text-light py-4 mt-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Shade Green Store</h5>
+                    <p>Let's create beautiful memories with flowers from our store!</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Email: ShadeGreen@gmail.com</p>
+                    <p>Phone: +62-123-456-7890</p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+      </section>
+       
+      <!--JS Bootstrap-->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="main.js"></script>>
+</body>
+</html>      
